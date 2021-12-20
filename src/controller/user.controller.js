@@ -9,7 +9,7 @@ router.post('/',body("first_name").isLength({ min: 1 , max: 25}).withMessage("Wi
 body("last_name").isLength({ min: 1 , max: 25}).withMessage("Wirte your last name"),
 body("email").custom( async (value) => {
 
-    
+    const isEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(value);
 
     const listOfDomain = ["gmail.com","yahoo.com"];
 
